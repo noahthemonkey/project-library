@@ -88,3 +88,13 @@ th, td {
     padding: 10px;
     text-align: center;
 }
+
+form {
+    display: grid;
+    grid-template-columns: 10vw 1fr ;
+    grid-template-rows: 1fr 1fr;
+}
+
+input {
+    width: 10vw;
+}
