@@ -13,18 +13,23 @@
 <body>
     <div id="content">
     <h1>library</h1>
-    <form action="#" onsubmit="addBookToLibrary()">
-        <label for="title">Title</label>
-        <input type="text" name="title" id="title" value="">
+    <form action="#" onsubmit="addBookToLibrary()" method="dialog">
+        <label for="title">Title
+            <input type="text" name="title" id="title" value="">
+        </label>
 
-        <label for="author">Name of the author</label>
-        <input type="text" name="author" id="author">
+        <label for="author">Name of the author
+            <input type="text" name="author" id="author">
+        </label>
 
-        <label for="pages">How many pages</label>
-        <input type="number" name="pages" id="pages">
+        <label for="pages">How many pages
+            <input type="number" name="pages" id="pages">
+        </label>
 
-        <label for="read">Read or not</label>
-        <input type="checkbox" name="read" id="read">
+        <label for="read"> Read or not
+            <input type="checkbox" name="read" id="read">
+        
+        </label>
 
         <button type="submit">submit</button>
     </form>
@@ -42,7 +47,7 @@
                         <td>The Hobbit</td>
                         <td>J.R.R Tolkien</td>
                         <td>451</td>
-                        <td>Read</td>
+                        <td><input type="checkbox" checked="true"></td>
                     </tr>
                 </tbody>
             </table>

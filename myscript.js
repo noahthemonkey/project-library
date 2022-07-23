@@ -30,6 +30,7 @@ const addedbooks = document.getElementById('addedbooks')
 
 function addBookToLibrary() {
   // do stuff here
+ 
   var addrow = document.createElement('tr')
   addedbooks.appendChild(addrow)
   var addtitle = document.createElement('td')
@@ -41,8 +42,23 @@ function addBookToLibrary() {
   var addpages = document.createElement('td')
   addpages.textContent = pagesinput.value
   addrow.appendChild(addpages)
+  
   var addread = document.createElement('td')
+  
+  if (readinput.checked == true) {
+    var addreadbtn = document.createElement('input')
+    addreadbtn.setAttribute('type', 'checkbox')
+    addreadbtn.checked = true
+  } else {
+    var addreadbtn = document.createElement('input')
+    addreadbtn.checked = false
+    addreadbtn.setAttribute('type', 'checkbox')
+  }
+  
 
+  addread.appendChild(addreadbtn)
+  addrow.appendChild(addread)
+  return
   
 
 }
