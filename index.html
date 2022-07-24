@@ -19,7 +19,7 @@
         </label>
 
         <label for="author">Name of the author
-            <input type="text" name="author" id="author">
+            <input type="text" name="author" id="author" placeholder="J.R.R Tolkien">
         </label>
 
         <label for="pages">How many pages
@@ -37,18 +37,23 @@
 
             <table> 
                 <tbody id="addedbooks">
+                    
                     <tr>
+                        <th></th>
                         <th>Title</th>
                         <th>Author</th>
                         <th>Pages</th>
                         <th>Read or not</th>
                     </tr>
+
                     <tr>
+                        <td><button onclick="removebook(this)"></button></td>
                         <td>The Hobbit</td>
                         <td>J.R.R Tolkien</td>
                         <td>451</td>
                         <td><input type="checkbox" checked="true"></td>
                     </tr>
+
                 </tbody>
             </table>
 
