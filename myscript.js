@@ -11,30 +11,25 @@ function Book(title, author, pages, read) {
 		return this.title + this.author + this.pages + this.read;
 	};
 }
-
-let book1 = new Book("The Hobbit", "J.R.R Tolkien", 275, true)
-myLibrary.push(book1)
-
-
-console.log(book1.info())
-
+const addedbooks = document.getElementById('addedbooks');
 
 titleinput = document.getElementById('title');
 authorinput = document.getElementById('author');
 pagesinput = document.getElementById('pages');
 readinput = document.getElementById('read');
 
-const addedbooks = document.getElementById('addedbooks');
+
 let bookx;
 let addrow;
+
 
 
 function addBookToLibrary() {
 	let bookx = new Book(titleinput.value, authorinput.value, pagesinput.value, readinput.checked)
 	myLibrary.push(bookx)
-	console.log(bookx)
-	console.log(myLibrary)
 
+	console.log(bookx.info)
+	console.log(myLibrary)
 
 
 
@@ -53,6 +48,8 @@ function addBookToLibrary() {
 	let removerow2 = document.createElement('button')
   let removerow1 = document.createElement('td')
 	removerow2.setAttribute('onclick', 'removebook(this)')
+	removerow2.setAttribute('id', 'removebtn')
+	removerow2.textContent = 'X'
   removerow1.appendChild(removerow2)
 	addrow.appendChild(removerow1)
 
@@ -72,11 +69,13 @@ function addBookToLibrary() {
 	if (readinput.checked == true) {
 		var addreadbtn = document.createElement('input')
 		addreadbtn.setAttribute('type', 'checkbox')
+		addreadbtn.setAttribute('id', 'check')
 		addreadbtn.checked = true
 	} else {
 		var addreadbtn = document.createElement('input')
 		addreadbtn.checked = false
 		addreadbtn.setAttribute('type', 'checkbox')
+		addreadbtn.setAttribute('id', 'check')
 	}
 
 addreadbtn.setAttribute('onclick', 'readornot(this)')
@@ -84,7 +83,7 @@ addreadbtn.setAttribute('onclick', 'readornot(this)')
 	addread.appendChild(addreadbtn)
 
 	addrow.appendChild(addread)
-
+	console.log(bookx.info())
 	return
 
 
@@ -97,16 +96,29 @@ while (i < tablerow.length) {
 	tablerow.setAttribute("class", "row_" + i);
 	i++;
 }
-console.log(i)
 
-// when the read or not button is pressed the object will change in myLibrary
+
+// when the read or not button is pressed the object will change in myLibrary array
+function bookRead(checkBook) {
+	return checkBook.title === titleinput.value;
+}
+console.log(myLibrary.findIndex(bookRead));
+
+
 function readornot(readclicked){
    var thisread = readclicked
-  
-   console.log(thisread)
+	console.log(thisread.checked)
+	
+   if (thisread.checked == true){
+	myLibrary[myLibrary.findIndex(bookRead)].read = true
 
-   
+   } else if (thisread.checked == false){
+	myLibrary[myLibrary.findIndex(bookRead)].read = false
+   }
+
+   console.log(myLibrary)   
 }
+
 
 
 
@@ -119,8 +131,6 @@ function removebook(rowclicked) {
   console.log(myLibrary)
 
 }
-
-
 
 
 

@@ -11,19 +11,19 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="content">
+    <div id="content"">
     <h1>library</h1>
     <form action="#" onsubmit="addBookToLibrary()" method="dialog">
         <label for="title">Title
-            <input type="text" name="title" id="title" value="">
+            <input type="text" name="title" id="title" value="" required>
         </label>
 
         <label for="author">Name of the author
-            <input type="text" name="author" id="author" placeholder="J.R.R Tolkien">
+            <input type="text" name="author" id="author" placeholder="J.R.R Tolkien" required>
         </label>
 
         <label for="pages">How many pages
-            <input type="number" name="pages" id="pages">
+            <input type="number" name="pages" id="pages" required>
         </label>
 
         <label for="read"> Read or not
@@ -38,22 +38,13 @@
             <table> 
                 <tbody id="addedbooks">
                     
-                    <tr>
+                    <tr id="titleRow">
                         <th></th>
                         <th>Title</th>
                         <th>Author</th>
                         <th>Pages</th>
                         <th>Read or not</th>
                     </tr>
-
-                    <tr>
-                        <td><button onclick="removebook(this)"></button></td>
-                        <td>The Hobbit</td>
-                        <td>J.R.R Tolkien</td>
-                        <td>451</td>
-                        <td><input type="checkbox" checked="true"></td>
-                    </tr>
-
                 </tbody>
             </table>
 

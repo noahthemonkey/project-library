@@ -54,41 +54,61 @@ body {
     font-family: 'Zilla Slab', serif;
 }
 #content {
-    background-color: #b45309;
+    background-color:#2563eb;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(1fr, auto);
     gap: 50px;
+
+    
 }
 
 .books {
-    background-color: #fde68a;
+    background-color: #1f218b;
     display: flex;
     justify-content: center;
+    margin: 2vw;
+    height: 500px;
+    background-image: url('taylor-van-riper-yQorCngxzwI-unsplash.jp');
+    
+    background-size: 10%;
+}
+
+table {
     width: 100%;
 }
 
 tbody {
-    width: 100vw;
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     gap: 50px;
-    
+
+
 }
 tr {
     display: grid;
-    grid-template-columns: 1vw 1fr 1fr 1fr 1fr;
+    grid-template-columns: 5vw 1fr 1fr 1fr 1fr 5vw;
     gap: 50px;
-    background-color: #f59e0b ;
+    background-color:#60a5fa;
+    align-items: center;
 }
 th {
     font-weight: 600;
+    font-size: 20px;
+    text-decoration: underline;
+    color: #000000;
+}
+
+#titleRow {
+    background-color: #006597;
 }
 th, td {
     padding: 10px;
     text-align: center;
 }
+
 
 form {
     display: grid;
@@ -98,4 +118,14 @@ form {
 
 input {
     width: 10vw;
+}
+
+#removebtn {
+    width: 4vh;
+    height: 4vh;
+    font-size: 2vh;
+    border-radius: 100%;
+    background-color: #0284c7  ;
+    color: #000000  ;
+    border: none;
 }
