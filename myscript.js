@@ -22,13 +22,14 @@ readinput = document.getElementById('read');
 let bookx;
 let addrow;
 
-
+var bookAdded; 
 
 function addBookToLibrary() {
 	let bookx = new Book(titleinput.value, authorinput.value, pagesinput.value, readinput.checked)
 	myLibrary.push(bookx)
 
-	console.log(bookx.info)
+	console.log(bookx.info())
+	bookAdded = bookx.info()
 	console.log(myLibrary)
 
 
@@ -99,25 +100,47 @@ while (i < tablerow.length) {
 
 
 // when the read or not button is pressed the object will change in myLibrary array
-function bookRead(checkBook) {
-	return checkBook.title === titleinput.value;
-}
-console.log(myLibrary.findIndex(bookRead));
 
+
+// check if checkbox true or not and if sibling number 2 has same value as mylibrary.title
+
+
+
+function findSecondChild(child){
+	let secondChildTitle = child.parentNode.parentNode.childNodes[1].textContent
+	let secondChildAuthor = child.parentNode.parentNode.childNodes[2].textContent
+	return secondChildTitle + secondChildAuthor;
+}
 
 function readornot(readclicked){
-   var thisread = readclicked
-	console.log(thisread.checked)
+	var thisread = readclicked
+	console.log(thisread)
+	console.log(findSecondChild(thisread))
+	console.log(myLibrary[myLibrary.findIndex(bookRead)].title) 
+	function bookRead(checkBook) {
+		return checkBook.title + checkBook.author === findSecondChild(thisread);
+	}
+	console.log(myLibrary.findIndex(bookRead));
+
+	function bookTitleAndAuthor(theBook) {
+		let bookInfo = theBook[theBook.findIndex(bookRead)]
+		return bookInfo
+	}
+	// (myLibrary[myLibrary.findIndex(bookRead)].title + myLibrary[myLibrary.findIndex(bookRead)].author) == findSecondChild(thisread))
+
+
 	
-   if (thisread.checked == true){
-	myLibrary[myLibrary.findIndex(bookRead)].read = true
+   if (thisread.checked == true && bookTitleAndAuthor(myLibrary).title + bookTitleAndAuthor(myLibrary).author == findSecondChild(thisread))
+   {
+	myLibrary[myLibrary.findIndex(bookRead)].read = thisread.checked
 
-   } else if (thisread.checked == false){
-	myLibrary[myLibrary.findIndex(bookRead)].read = false
+   } else if (thisread.checked == false && bookTitleAndAuthor(myLibrary).title + bookTitleAndAuthor(myLibrary).author == findSecondChild(thisread))
+   {
+	myLibrary[myLibrary.findIndex(bookRead)].read = thisread.checked
    }
-
-   console.log(myLibrary)   
+   console.log(myLibrary)
 }
+
 
 
 
