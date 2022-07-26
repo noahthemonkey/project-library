@@ -1,0 +1,11 @@
+fix bug where wrong info in myLibrary would change
+
+Fix the bug where the readornot checkbox would change the wrong info 
+in the myLibrary array. This was due to the bookRead function
+comparing the title being pressed to what book was just added.
+making it so that if the checkbox being pressed would change the book
+the user just added, instead of the one being pressed
+
+Make title and author a prerequisite for the info to change in the
+myLibrary array to avoid two authors with the same title getting
+mixed up.

@@ -52,9 +52,10 @@ table {
 /* --------------------------------------------------------------------------------------------------------------------------- */
 body {
     font-family: 'Zilla Slab', serif;
+    
 }
 #content {
-    background-color:#2563eb;
+    background-color: rgba(33, 28, 23, 0.935) ;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(1fr, auto);
@@ -64,15 +65,15 @@ body {
 }
 
 .books {
-    background-color: #1f218b;
+    background-color:  rgba(47, 35, 19, 0.627);
     display: flex;
     justify-content: center;
     margin: 2vw;
-    height: 500px;
-    background-image: url('taylor-van-riper-yQorCngxzwI-unsplash.jp');
-    
+    height: 500px;    
     background-size: 10%;
 }
+
+
 
 table {
     width: 100%;
@@ -88,36 +89,83 @@ tbody {
 
 }
 tr {
+    background-color: rgba(53, 41, 19, 0.597);
     display: grid;
     grid-template-columns: 5vw 1fr 1fr 1fr 1fr 5vw;
     gap: 50px;
-    background-color:#60a5fa;
+
     align-items: center;
 }
 th {
+
     font-weight: 600;
     font-size: 20px;
     text-decoration: underline;
-    color: #000000;
+
 }
 
 #titleRow {
-    background-color: #006597;
+background-color: rgba(79, 56, 33, 0.603);
 }
 th, td {
     padding: 10px;
     text-align: center;
 }
 
+#topContainer {
+    background-image: url('marko-blazevic-S7mAngnWV1A-unsplash.jpg');
+    background-size: 110%;
+    background-position: center;
+}
+
 
 form {
     display: grid;
-    grid-template-columns: 1fr 1fr ;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 20vw 20vw 20vw;
     grid-template-rows: 1fr 1fr;
+    row-gap: 0.5vh;
+    column-gap: 5vh;
+}
+
+label {
+    align-content: space-around;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+
 }
 
 input {
-    width: 10vw;
+    background-color: #000000;
+    border-color: black;
+    color: white;
+}
+
+label[for='read']{
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    grid-column: 2;
+}
+#read {
+
+}
+#submit {
+    display: flex;
+    justify-content: center;
+    grid-row: 3;
+    grid-column: 2;
+}
+
+button[type='submit'] {
+    border: none;
+    justify-content: center;
+    width: 8vw;
+    background-color: #86c6e5;
+    color: white;
 }
 
 #removebtn {
