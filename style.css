@@ -52,15 +52,20 @@ table {
 /* --------------------------------------------------------------------------------------------------------------------------- */
 body {
     font-family: 'Zilla Slab', serif;
+    height: 100vh;
+    background-image: url('marko-blazevic-S7mAngnWV1A-unsplash.jpg');
+    background-size: 150%;
+    background-position: center;
     
 }
 #content {
-    background-color: rgba(33, 28, 23, 0.935) ;
+    background-color: rgba(0, 0, 0, 0) ;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(1fr, auto);
     gap: 50px;
-
+   
+    
     
 }
 
@@ -72,7 +77,10 @@ body {
     height: 500px;    
     background-size: 10%;
 }
-
+h1 {
+    color: rgb(209, 157, 59);
+    font-size: 6vh;
+}
 
 
 table {
@@ -89,15 +97,16 @@ tbody {
 
 }
 tr {
-    background-color: rgba(53, 41, 19, 0.597);
+    background-color: rgba(53, 36, 19, 0.883);
     display: grid;
     grid-template-columns: 5vw 1fr 1fr 1fr 1fr 5vw;
     gap: 50px;
-
+    color: rgb(209, 157, 59);
     align-items: center;
 }
 th {
-
+    color: black;
+    
     font-weight: 600;
     font-size: 20px;
     text-decoration: underline;
@@ -105,7 +114,8 @@ th {
 }
 
 #titleRow {
-background-color: rgba(79, 56, 33, 0.603);
+background-color: rgb(128, 89, 50);
+height: 8vh;
 }
 th, td {
     padding: 10px;
@@ -113,9 +123,7 @@ th, td {
 }
 
 #topContainer {
-    background-image: url('marko-blazevic-S7mAngnWV1A-unsplash.jpg');
-    background-size: 110%;
-    background-position: center;
+
 }
 
 
@@ -134,13 +142,16 @@ label {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
+    color: rgba(0, 0, 0, 0.463);
+    text-shadow: 1px 1px rgb(209, 157, 59);
 
 }
 
 input {
+    font-family: 'Zilla Slab', serif;
     background-color: #000000;
     border-color: black;
-    color: white;
+    color:rgb(209, 157, 59);;
 }
 
 label[for='read']{
@@ -161,11 +172,12 @@ label[for='read']{
 }
 
 button[type='submit'] {
+    font-family: 'Zilla Slab', serif;
     border: none;
     justify-content: center;
     width: 8vw;
-    background-color: #86c6e5;
-    color: white;
+    background-color: rgb(209, 157, 59);
+    color: rgb(0, 0, 0);
 }
 
 #removebtn {
@@ -173,7 +185,19 @@ button[type='submit'] {
     height: 4vh;
     font-size: 2vh;
     border-radius: 100%;
-    background-color: #0284c7  ;
+    background-color:rgb(209, 157, 59)  ;
     color: #000000  ;
     border: none;
+}
+
+p {
+    font-size: 2vh;
+    position: relative;
+    top: 12%;
+    text-align: center;
+    color:rgb(209, 157, 59);
+}
+
+a {
+    color: rgb(255, 255, 255);
 }
